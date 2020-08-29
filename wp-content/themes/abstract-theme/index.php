@@ -7,9 +7,26 @@ get_header();
 ?>
 
 	<main id="main" class="site-main" role="main">
-		<div>
+
+		<div class="page-content">
+
 			<?php
-			demo_component();
+			while ( have_posts() ) : the_post();
+
+				?>
+				<article id="post-<?php the_ID(); ?>" class="entry">
+					<header class="entry-header">
+						<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+					</header>
+
+					<div class="entry-content">
+						<?php the_content(); ?>
+					</div>
+				</article>
+
+			<?php
+
+			endwhile;
 			?>
 		</div>
 	</main>
@@ -17,3 +34,4 @@ get_header();
 <?php
 
 get_footer();
+

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
+ * The template for displaying all single posts
  *
  */
 
@@ -11,6 +11,7 @@ get_header();
 
 		<?php
 		while ( have_posts() ) : the_post();
+
 			?>
 			<article id="post-<?php the_ID(); ?>" class="entry">
 				<header class="entry-header">
@@ -21,7 +22,10 @@ get_header();
 					<?php the_content(); ?>
 				</div>
 			</article>
+
+
 			<?php
+
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();

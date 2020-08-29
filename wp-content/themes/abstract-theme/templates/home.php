@@ -1,16 +1,20 @@
 <?php
-/**
- * The template for displaying all pages
- *
- */
+/* Template Name: Home */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 
 get_header();
-?>
 
-	<main id="main" class="site-main" role="main">
+
+?>
+<main id="main" class="site-main" role="main">
+
+	<div class="page-content">
 
 		<?php
 		while ( have_posts() ) : the_post();
+
 			?>
 			<article id="post-<?php the_ID(); ?>" class="entry">
 				<header class="entry-header">
@@ -21,17 +25,13 @@ get_header();
 					<?php the_content(); ?>
 				</div>
 			</article>
-			<?php
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+
+		<?php
 
 		endwhile;
 		?>
+	</div>
+</main>
 
-	</main>
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>

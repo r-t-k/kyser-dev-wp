@@ -1,6 +1,0 @@
-{
-    "require": {
-        "guzzlehttp/guzzle": "~6.0",
-        "soberwp/models": "1.1.0"
-    }
-}
